@@ -7,8 +7,8 @@ MediaQueryData mediaQueryData = MediaQueryData.fromView(ui.window);
 
 // These are the Viewport values of your Figma Design.
 // These are used in the code as a reference to create your UI Responsively.
-const num FIGMA_DESIGN_WIDTH = 393;
-const num FIGMA_DESIGN_HEIGHT = 852;
+const num FIGMA_DESIGN_WIDTH = 360;
+const num FIGMA_DESIGN_HEIGHT = 800;
 const num FIGMA_DESIGN_STATUS_BAR = 0;
 
 ///This extension is used to set padding/margin (for the top and bottom side) & height of the screen or widget according to the Viewport height.
