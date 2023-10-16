@@ -5,6 +5,7 @@ import 'package:carvice/core/utils/validation_functions.dart';
 import 'package:carvice/widgets/custom_icon_button.dart';
 import 'package:carvice/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:carvice/domain/facebookauth/facebook_auth_helper.dart';
 
 // ignore_for_file: must_be_immutable
@@ -35,14 +36,20 @@ class SignupScreen extends StatelessWidget {
                         child: Padding(
                             padding: EdgeInsets.only(bottom: 109.v),
                             child: Column(children: [
-                              CustomImageView(
-                                  svgPath: ImageConstant.imgArrowleft,
-                                  height: 36.v,
-                                  width: 24.h,
-                                  onTap: () {
-                                    onTapImgArrowleftone(context);
-                                  }),
-                              SizedBox(height: 65.v),
+                              Align(
+                                  alignment: Alignment.topLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.only(
+                                        left: 46.h, top: 34.v, right: 45.h),
+                                    child: CustomImageView(
+                                        svgPath: ImageConstant.imgArrowleft,
+                                        height: 18.adaptSize,
+                                        width: 18.adaptSize,
+                                        onTap: () {
+                                          onTapImgArrowleftone(context);
+                                        }),
+                                  )),
+                              SizedBox(height: 40.v),
                               Text("lbl_create_account".tr,
                                   style: theme.textTheme.titleLarge),
                               BlocSelector<SignupBloc, SignupState,
@@ -127,94 +134,41 @@ class SignupScreen extends StatelessWidget {
                                           return null;
                                         });
                                   }),
-                              Container(
-                                  margin: EdgeInsets.only(
-                                      left: 48.h, top: 42.v, right: 45.h),
-                                  padding: EdgeInsets.symmetric(
-                                      horizontal: 18.h, vertical: 13.v),
-                                  decoration: AppDecoration.outlineBlack
-                                      .copyWith(
-                                          borderRadius:
-                                              BorderRadiusStyle.circleBorder25),
-                                  child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Container(
-                                            margin: EdgeInsets.symmetric(
-                                                vertical: 1.v),
-                                            padding: EdgeInsets.symmetric(
-                                                horizontal: 1.h, vertical: 2.v),
-                                            decoration: AppDecoration
-                                                .fillGray500
-                                                .copyWith(
-                                                    borderRadius:
-                                                        BorderRadiusStyle
-                                                            .roundedBorder3),
-                                            child: Column(
-                                                mainAxisSize: MainAxisSize.min,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Container(
-                                                      height: 12.v,
-                                                      width: 10.h,
-                                                      decoration: BoxDecoration(
-                                                          color: appTheme
-                                                              .whiteA700,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      1.h))),
-                                                  Container(
-                                                      height: 2.adaptSize,
-                                                      width: 2.adaptSize,
-                                                      margin: EdgeInsets.only(
-                                                          left: 1.h, top: 2.v),
-                                                      decoration: BoxDecoration(
-                                                          color: appTheme
-                                                              .whiteA700,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      1.h)))
-                                                ])),
-                                        Padding(
-                                            padding:
-                                                EdgeInsets.only(left: 13.h),
-                                            child: Text("lbl_mobile".tr,
-                                                style:
-                                                    theme.textTheme.bodyMedium))
-                                      ])),
                               SizedBox(height: 24.v),
                               Align(
-                                  alignment: Alignment.centerLeft,
+                                  alignment: Alignment.topRight,
+                                  child: Padding(
+                                    padding: EdgeInsets.only(
+                                        left: 46.h, top: 34.v, right: 45.h),
+                                    child: CustomImageView(
+                                        svgPath: ImageConstant.imgArrowright,
+                                        height: 18.adaptSize,
+                                        width: 18.adaptSize,
+                                        color: Colors.black),
+                                  )),
+                              Align(
+                                  alignment: Alignment.center,
                                   child: SizedBox(
                                       height: 362.v,
-                                      width: 339.h,
+                                      // width: 339.h,
                                       child: Stack(
-                                          alignment: Alignment.topRight,
+                                          alignment: Alignment.center,
                                           children: [
                                             Align(
-                                                alignment: Alignment.topRight,
+                                                alignment: Alignment.topCenter,
                                                 child: Padding(
                                                     padding: EdgeInsets.only(
-                                                        top: 107.v),
+                                                        top: 80.v),
                                                     child: Text(
                                                         "msg_or_create_account"
                                                             .tr,
                                                         style: CustomTextStyles
                                                             .bodyMediumGray900))),
-                                            CustomImageView(
-                                                svgPath:
-                                                    ImageConstant.imgArrowright,
-                                                height: 18.adaptSize,
-                                                width: 18.adaptSize),
                                             Align(
-                                                alignment: Alignment.topRight,
+                                                alignment: Alignment.topCenter,
                                                 child: Padding(
                                                     padding: EdgeInsets.only(
-                                                        top: 137.v,
-                                                        right: 71.h),
+                                                        top: 130.v),
                                                     child: Row(
                                                         mainAxisAlignment:
                                                             MainAxisAlignment
@@ -222,23 +176,15 @@ class SignupScreen extends StatelessWidget {
                                                         mainAxisSize:
                                                             MainAxisSize.min,
                                                         children: [
-                                                          CustomIconButton(
-                                                              height:
-                                                                  35.adaptSize,
-                                                              width:
-                                                                  35.adaptSize,
-                                                              padding:
-                                                                  EdgeInsets
-                                                                      .all(8.h),
-                                                              onTap: () {
-                                                                onTapBtnFacebookone(
-                                                                    context);
-                                                              },
-                                                              child: CustomImageView(
-                                                                  svgPath:
-                                                                      ImageConstant
-                                                                          .imgFacebook)),
-                                                          CustomIconButton(
+                                                          GestureDetector(
+                                                            // onTap:
+                                                            //     onTapBtnFacebookone(
+                                                            //         context),
+                                                            child:
+                                                                CustomImageView(
+                                                              svgPath:
+                                                                  ImageConstant
+                                                                      .imgFacebook,
                                                               height:
                                                                   35.adaptSize,
                                                               width:
@@ -246,18 +192,38 @@ class SignupScreen extends StatelessWidget {
                                                               margin: EdgeInsets
                                                                   .only(
                                                                       left:
-                                                                          20.h),
-                                                              padding:
-                                                                  EdgeInsets
-                                                                      .all(6.h),
-                                                              decoration:
-                                                                  IconButtonStyleHelper
-                                                                      .outlineBlackTL17,
-                                                              child: CustomImageView(
-                                                                  svgPath:
-                                                                      ImageConstant
-                                                                          .imgTwitter)),
-                                                          CustomImageView(
+                                                                          10.h,
+                                                                      right:
+                                                                          10.h),
+                                                            ),
+                                                          ),
+                                                          GestureDetector(
+                                                            // onTap:
+                                                            //     onTapBtnFacebookone(
+                                                            //         context),
+                                                            child:
+                                                                CustomImageView(
+                                                              svgPath:
+                                                                  ImageConstant
+                                                                      .imgTwitter,
+                                                              height:
+                                                                  35.adaptSize,
+                                                              width:
+                                                                  35.adaptSize,
+                                                              margin: EdgeInsets
+                                                                  .only(
+                                                                      left:
+                                                                          10.h,
+                                                                      right:
+                                                                          10.h),
+                                                            ),
+                                                          ),
+                                                          GestureDetector(
+                                                            // onTap:
+                                                            //     onTapBtnFacebookone(
+                                                            //         context),
+                                                            child:
+                                                                CustomImageView(
                                                               svgPath:
                                                                   ImageConstant
                                                                       .imgGoogle,
@@ -268,7 +234,11 @@ class SignupScreen extends StatelessWidget {
                                                               margin: EdgeInsets
                                                                   .only(
                                                                       left:
-                                                                          20.h))
+                                                                          10.h,
+                                                                      right:
+                                                                          10.h),
+                                                            ),
+                                                          ),
                                                         ]))),
                                             CustomImageView(
                                                 imagePath: ImageConstant

@@ -38,17 +38,17 @@ class AppDecoration {
   // Outline decorations
   static BoxDecoration get outlineBlack => BoxDecoration(
         color: appTheme.whiteA700,
-        boxShadow: [
-          BoxShadow(
-            color: appTheme.black900.withOpacity(0.1),
-            spreadRadius: 2.h,
-            blurRadius: 2.h,
-            offset: const Offset(
-              0,
-              8,
-            ),
-          ),
-        ],
+        // boxShadow: [
+        //   BoxShadow(
+        //     color: appTheme.black900.withOpacity(0.1),
+        //     spreadRadius: 2.h,
+        //     blurRadius: 2.h,
+        //     offset: const Offset(
+        //       0,
+        //       8,
+        //     ),
+        //   ),
+        // ],
       );
 }
 
